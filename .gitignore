@@ -1,0 +1,8 @@
+parse_max_smide/*.csv
+data/_all_bikes.csv
+.DS_Store
+.vscode
+parse_publibike_heatmap/results/*png
+parse_publibike_heatmap/results/*html
+parse_publibike_heatmap/results/*mp4
+parse_publibike_heatmap/ignore
