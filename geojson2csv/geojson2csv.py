@@ -12,15 +12,19 @@ def main():
 	frames = []
 
 	# find all matching files
-	files = glob.glob('..'+os.sep+'data'+os.sep+'*.geojson')
+	files = sorted(glob.glob('..'+os.sep+'data'+os.sep+'*.geojson'))
 
 	for f in files:
 		with open(f,'r') as fo:
-			data = json.load(fo)
-
-		# load json into dataframe	
-		df = pd.io.json.json_normalize(data.get('features'))
+			try:
+				data = json.load(fo)
+			except:
+				print('WARNING: invalid json',f)
+				continue
 		
+		# load json into dataframe	
+		df = pd.json_normalize(data.get('features'))
+
 		# split array of geocoords into two columns
 		df['longitude'], df['latitude'] = zip(*df['geometry.coordinates'])
 		
@@ -67,7 +71,7 @@ def main():
 	df = df[['filename','provider', 'id', 'timestamp', 'longitude', 'latitude', \
 				'name', 'charge', 'electric', 'manual',  'range', 'size']]
 
-	df.to_csv('bikes.csv',sep=',',index=False)
+	df.to_csv('..'+os.sep+'data'+os.sep+'_all_bikes.csv',sep=',',index=False)
 
 if __name__ == "__main__":
 	main()
