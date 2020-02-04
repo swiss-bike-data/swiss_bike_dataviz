@@ -54,18 +54,18 @@ def plot_points(df_points, df_heatmap):
 	# to see available columns for popup
 	#print(df_points.columns)
 
-	popup_text = '''
-	{0}<br><br>
-	{1}<br><br>
-	{2}<br>
-	{3} {4} ({5})<br><br>
-	<a href=" https://map.geo.admin.ch/?ch.astra.unfaelle-personenschaeden_fahrraeder={6}">View on geo.admin.ch</a><br>
-	'''
-
 	# https://map.geo.admin.ch/?ch.astra.unfaelle-personenschaeden_fahrraeder=AD6D967DE2ED0150E0430A8394270150
 
 	# add points to map (swiss bike deaths)
 	for _, row in df_points.iterrows():
+
+		popup_text = '''
+		{0}<br><br>
+		{1}<br><br>
+		{2}<br>
+		{3} {4} ({5})<br><br>
+		<a href=" https://map.geo.admin.ch/?ch.astra.unfaelle-personenschaeden_fahrraeder={6}">View on geo.admin.ch</a><br>
+		'''
 
 		# generate text for tooltip
 		popup_text = popup_text.format(row['AccidentType_en'], \
