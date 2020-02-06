@@ -14,7 +14,7 @@ this python3 code does the following:
 
 ## view demo
 
-[interactive map](https://rawcdn.githack.com/philshem/get_bikes/0a4ffa520b87047dc8678bc191510eb11f5fe7e3/get_bikeable_heatmap/html/heatmap.html)
+[interactive map](https://raw.githack.com/philshem/get_bikes/master/get_bikeable_heatmap/html/heatmap.html)
 
 ## screenshot
 
