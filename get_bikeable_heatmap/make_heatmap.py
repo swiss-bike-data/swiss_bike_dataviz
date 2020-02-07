@@ -17,7 +17,7 @@ def main():
 	df_bi = get_bikeable(g1)
 
 	# swiss bike accidents as dataframe
-	g2 = 'https://raw.githubusercontent.com/philshem/swiss_bike_deaths/master/swiss_bike_deaths.geojson'
+	g2 = 'https://raw.githubusercontent.com/swiss-bike-data/swiss_bike_deaths/master/swiss_bike_deaths.geojson'
 	df_sd = get_accidents(g2)
 	
 	# save them to an html map
