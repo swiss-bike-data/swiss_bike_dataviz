@@ -1,3 +1,4 @@
+parse_avg_smide
 parse_max_smide/*.csv
 .vscode
 .DS_Store
